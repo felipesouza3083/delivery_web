@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import Profile from './components/Profile';
+import Main from './views/Main';
+import { Row, Col } from 'react-materialize';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <Row>
+        <Header />
+        <Row>
+          <Col m={2}>
+            <Profile />
+          </Col>
+          <Col m={10}>
+            <Main />
+          </Col>
+        </Row>
+      </Row>
+    )
+  }
 }
 
 export default App;
